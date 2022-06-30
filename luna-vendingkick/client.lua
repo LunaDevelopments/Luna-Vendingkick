@@ -6,20 +6,20 @@ local vendingItems = {
 }
 
 RegisterNetEvent('luna:client:vendingkick', function(item, count, chance)
-    TriggerEvent('animations:client:EmoteCommandStart', {"karate"})
+    TriggerEvent('animations:client:EmoteCommandStart', {"karate"}) -- Emote of kicking
     QBCore.Functions.Progressbar('add_water', 'Kicking vending machine...', 5000, false, true, {
         disableMovement = true,
         disableCarMovement = true,
         disableMouse = false,
         disableCombat = true,
         }, { }, {}, {}, function()
-        TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+        TriggerEvent('animations:client:EmoteCommandStart', {"c"}) -- cancelling the emote
         Wait(500)
         if time == 0 then
             for i = 1, #vendingItems, 1 do
                 Wait(500)
-                local chance = math.random(1, 100)
-                local vendingreward = vendingItems[i].name
+                local chance = math.random(1, 100) -- Chance %
+                local vendingreward = vendingItems[i].name -- pulling the items from the vendingItems table
                 local count = vendingItems[i].count
                 if chance >= vendingItems[i].chance then 
                     QBCore.Functions.Notify("You found nothing", "error")
@@ -28,7 +28,7 @@ RegisterNetEvent('luna:client:vendingkick', function(item, count, chance)
                     TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items[vendingreward], "add", count)
                 end   
             end
-            time = 240
+            time = 240 -- cooldown time to be able to kick another vending machine.
             timeouts()
         else
             QBCore.Functions.Notify("This machine looks empty", "error")
