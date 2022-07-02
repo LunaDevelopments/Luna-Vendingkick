@@ -5,6 +5,17 @@ local vendingItems = {
     [2] = {name = 'snikkel_candy', count = math.random(2, 6), chance = 50, robbed = false}, --50% chance
 }
 
+function timeouts()
+    Citizen.CreateThread(function()
+        while (time ~= 0) do 
+            --print(time)
+            Wait( 1000 ) -- Wait a second
+            time = time - 1
+        end
+        time = 0
+    end)
+end
+
 RegisterNetEvent('luna:client:vendingkick', function(item, count, chance)
     TriggerEvent('animations:client:EmoteCommandStart', {"karate"}) -- Emote of kicking
     QBCore.Functions.Progressbar('add_water', 'Kicking vending machine...', 5000, false, true, {
