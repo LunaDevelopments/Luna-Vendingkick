@@ -1,6 +1,6 @@
 ![newBanner](https://user-images.githubusercontent.com/52039113/176376396-08f0e002-2eaa-463b-af11-e2a367496372.jpg)
 
-Want to join LunaDevelopments?
+### Want to join LunaDevelopments?
 https://discord.gg/RrxjE4dEbp
 
 # luna-vendingkick
