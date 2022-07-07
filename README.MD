@@ -3,33 +3,12 @@
 Want to join LunaDevelopments?
 https://discord.gg/RrxjE4dEbp
 
-luna-vendingkick
+# luna-vendingkick
 
-please edit this to your liking.
+Vending machine kick script.
 
-Vending machine kick script. 
-
-You can change the loot and the chance of getting loot.
+Please edit this to your liking. You can change the loot and the chance of getting loot and add new machine models.
 
 This script also has a cooldown so people can't just go around constantly kicking vending machines.
 
-Put this code inside qb-target init.lua under the section Config.TargetModels
-["vendingKick"] = {
-        models = {
-	    `prop_vend_fridge01`,
-        `prop_vend_snak_01`,
-        `prop_vend_snak_01_tu`,
-        `prop_vend_soda_01`,
-        `prop_vend_soda_02`,
-        },
-        options = {
-            {
-                type = "client",
-                event = "luna:client:vendingkick",
-                icon = "fas fa-shoe-prints",
-                label = "Kick this shit!",
-            },
-        },
-        distance = 3.0
-    },
-
+Requirements: `qb-target`
